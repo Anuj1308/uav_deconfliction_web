@@ -1,0 +1,195 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    transition: background 0.5s ease, color 0.5s ease; /* Ensure transition applies to <html> */
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat, #f5f1e9;
+    color: #3c2f2f;
+    line-height: 1.6;
+}
+
+html.dark body {
+    background: url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat, #2c2526;
+    color: #e6d4a3;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #d4a017;
+    padding-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #3c2f2f;
+}
+
+html.dark h1 {
+    color: #e6d4a3;
+}
+
+#theme-toggle {
+    padding: 8px 16px;
+    background: #d4a017;
+    color: #fff;
+    border: none;
+    border-radius: 100 px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+    background: #b38712;
+    transform: scale(1.05);
+}
+
+/* Content Layout */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Sections */
+.input-section, .results-section {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(255, 245, 230, 0.9);
+    padding: 20px;
+    border: 1px solid #d4a017;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.5s ease;
+}
+
+html.dark .input-section, html.dark .results-section {
+    background: rgba(44, 37, 38, 0.9);
+    border-color: #e6d4a3;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: 15px;
+    color: #3c2f2f;
+}
+
+html.dark h2 {
+    color: #e6d4a3;
+}
+
+/* Form */
+label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #3c2f2f;
+}
+
+html.dark label {
+    color: #e6d4a3;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    background: #fffaf0;
+    border: 1px solid #8b6f47;
+    border-radius: 4px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+html.dark textarea {
+    background: #3b2f2f;
+    border-color: #e6d4a3;
+    color: #e6d4a3;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #d4a017;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #8b6f47;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #6b5436;
+    transform: scale(1.02);
+}
+
+html.dark button {
+    background: #d4a017;
+}
+
+html.dark button:hover {
+    background: #b38712;
+}
+
+/* Results */
+.results-section p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    word-break: break-word;
+}
+
+video, img {
+    width: 100%;
+    margin-top: 20px;
+    border: 2px solid #d4a017;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+html.dark video, html.dark img {
+    border-color: #e6d4a3;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.results-section:not(.hidden) {
+    animation: fadeIn 0.5s ease-in;
+}
